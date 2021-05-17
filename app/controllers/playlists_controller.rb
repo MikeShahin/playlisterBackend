@@ -7,7 +7,8 @@ class PlaylistsController < ApplicationController
     def show
         @playlist = Playlist.find_by(id: params[:id])
         if @playlist
-            render json: @playlist
+            # render json: @playlist
+            render json: @playlist.songs
         else 
             render json: {error: "playlist doesn't exist"}
         end
